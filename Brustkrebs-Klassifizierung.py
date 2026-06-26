@@ -102,7 +102,7 @@ def plot_data(X_train, y_train):
     plt.title("Class distribution in training set")
     plt.text(0, class_counts[1], class_counts[1], ha="center", va="bottom", fontsize=12)
     plt.text(1, class_counts[-1], class_counts[-1], ha="center", va="bottom", fontsize=12)
-    plt.savefig("class_distribution.png", dpi=300, bbox_inches="tight")
+    plt.savefig("img/class_distribution.png", dpi=300, bbox_inches="tight")
     plt.show()
 
     # discriminative power per feature: standardized mean difference between classes
@@ -115,7 +115,7 @@ def plot_data(X_train, y_train):
     plt.title("Discriminative power per feature", fontsize=16)
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
-    plt.savefig("feature_separation.png", dpi=300, bbox_inches="tight")
+    plt.savefig("img/feature_separation.png", dpi=300, bbox_inches="tight")
     plt.show()
 
     # boxplots per class, all features side by side
@@ -132,7 +132,7 @@ def plot_data(X_train, y_train):
     ax.set_ylabel("Standardized value", fontsize=14)
     ax.set_title("Feature distributions per class (standardized)", fontsize=16)
     ax.legend([bp1["boxes"][0], bp2["boxes"][0]], ["benign", "malignant"], fontsize=12)
-    plt.savefig("boxplots_per_class.png", dpi=300, bbox_inches="tight")
+    plt.savefig("img/boxplots_per_class.png", dpi=300, bbox_inches="tight")
     plt.show()
 
     # boxplot of all standardized features, shows spread and outliers
@@ -141,7 +141,7 @@ def plot_data(X_train, y_train):
     plt.xticks(rotation=90)
     plt.ylabel("Standardized value")
     plt.title("Distribution of standardized features")
-    plt.savefig("boxplots_all_features.png", dpi=300, bbox_inches="tight")
+    plt.savefig("img/boxplots_all_features.png", dpi=300, bbox_inches="tight")
     plt.show()
 
     # correlation heatmap of all 30 features
@@ -154,7 +154,7 @@ def plot_data(X_train, y_train):
     plt.xticks(range(len(X_train.columns)), X_train.columns, rotation=90, fontsize=12)
     plt.yticks(range(len(X_train.columns)), X_train.columns, fontsize=12)
     plt.title("Feature correlation matrix", fontsize=16)
-    plt.savefig("correlation_heatmap.png", dpi=300, bbox_inches="tight")
+    plt.savefig("img/correlation_heatmap.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 def plot_loss(model):
@@ -162,6 +162,7 @@ def plot_loss(model):
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
     plt.title("Training loss over epochs")
+    plt.savefig("img/loss_over_epochs.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 def plot_confusion_matrix(test_predictions, y_test):
@@ -187,6 +188,7 @@ def plot_confusion_matrix(test_predictions, y_test):
     plt.text(1, 0, false_malignant, ha="center", va="center", fontsize=20)
     plt.text(0, 1, false_benign, ha="center", va="center", fontsize=20)
     plt.text(1, 1, correct_malignant, ha="center", va="center", fontsize=20)
+    plt.savefig("img/confusion_matrix.png", dpi=300, bbox_inches="tight")
 
     plt.show()
 
